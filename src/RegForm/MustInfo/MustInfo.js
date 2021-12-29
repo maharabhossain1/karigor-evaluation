@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box, FormControl, MenuItem } from "@mui/material";
+import { Box, FormControl, MenuItem, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 const classinformations = [
@@ -118,6 +118,9 @@ export default function MustInfo() {
           </FormControl>
         </Grid>
       </Grid>
+      <Box>
+        <Button variant="contained">Next</Button>
+      </Box>
     </Box>
   );
 }

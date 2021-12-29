@@ -1,12 +1,13 @@
 import "./App.css";
-import MustInfo from "./RegForm/MustInfo/MustInfo";
+import StepContext from "./context/StepContext";
 import RegForm from "./RegForm/RegForm";
 
 function App() {
   return (
     <div>
-      <RegForm />
-      <MustInfo />
+      <StepContext>
+        <RegForm />
+      </StepContext>
     </div>
   );
 }
