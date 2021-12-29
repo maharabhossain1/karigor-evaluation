@@ -40,8 +40,8 @@ export default function RegForm() {
         activeStep={courrentStep - 1}
         orientation="horizontal"
       >
-        {steps.map((lable) => (
-          <Step>
+        {steps.map((lable, i) => (
+          <Step key={i}>
             <StepLabel>{lable}</StepLabel>
           </Step>
         ))}

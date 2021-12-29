@@ -1,8 +1,11 @@
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useContext } from "react";
+import { multiStepContext } from "../../context/StepContext";
 
 export default function QRCode() {
+  const { setCourrentStep } = useContext(multiStepContext);
+
   return (
     <Box>
       <Box
@@ -37,6 +40,11 @@ export default function QRCode() {
           ছাত্রের ফিঙ্গারপ্রিন্ট রেজিস্টার করার জন্য দয়া করে আমাদের মোবাইল অ্যাপ
           এর সাহায্যে এই কোড টি স্ক্যান করুন
         </Typography>
+      </Box>
+      <Box>
+        <Button onClick={() => setCourrentStep(3)} variant="contained">
+          Next
+        </Button>
       </Box>
     </Box>
   );
