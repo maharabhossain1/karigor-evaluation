@@ -3,39 +3,41 @@ import TextField from "@mui/material/TextField";
 import { Box, FormControl, MenuItem } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
-const currencies = [
+const classinformations = [
   {
-    value: "class1",
+    value: "কাফিয়া",
     label: "কাফিয়া",
   },
   {
-    value: "class2",
+    value: "শরহে বেকায়া",
     label: "শরহে বেকায়া",
   },
   {
-    value: "class3",
+    value: "মিশকাত",
     label: "মিশকাত",
   },
   {
-    value: "class4",
+    value: "দাওরায়ে হাদীস",
     label: "দাওরায়ে হাদীস",
   },
 ];
 
 export default function MustInfo() {
   const [mustInfoData, setMustInfoData] = useState({});
-  const [currency, setCurrency] = React.useState("class1");
-  const [dateValue, setDateValue] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
+  const [classData, setClassData] = React.useState("");
 
-  // Date Changing handle funtion
-  const handleDateChange = (newDateValue) => {
-    setDateValue(newDateValue);
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newInfo = { ...mustInfoData };
+    newInfo[field] = value;
+    setMustInfoData(newInfo);
   };
+  const handleClassData = (event) => {
+    const studentClass = event.target.value;
+    setClassData(studentClass);
+  };
+  console.log(mustInfoData, classData);
   return (
     <Box component="form" sx={{ width: "75%", mx: "auto", flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -44,6 +46,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Student Name"
+              name="studentName"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
@@ -51,6 +55,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Father Name"
+              name="fatherName"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
@@ -58,6 +64,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Mobile Number"
+              name="mobileNumber"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
@@ -69,10 +77,12 @@ export default function MustInfo() {
               id="outlined-select-currency"
               select
               label="Select Your Class"
-              value={currency}
-              onChange={handleChange}
+              name="studentClass"
+              value={classData}
+              onBlur={handleOnBlur}
+              onChange={handleClassData}
             >
-              {currencies.map((option) => (
+              {classinformations.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
@@ -83,6 +93,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Admission Date"
+              name="admissionDate"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
@@ -90,6 +102,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Admission Test Marks"
+              name="admissionTestMarks"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
@@ -97,6 +111,8 @@ export default function MustInfo() {
             <TextField
               id="outlined-basic"
               label="Admisssion Fee"
+              name="admissionFee"
+              onBlur={handleOnBlur}
               variant="outlined"
             />
           </FormControl>
