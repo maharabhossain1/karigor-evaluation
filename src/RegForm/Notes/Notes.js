@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import NoteCard from "./NoteCard/NoteCard";
