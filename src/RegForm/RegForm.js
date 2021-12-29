@@ -1,4 +1,4 @@
-import { Stepper, Step, StepLabel } from "@mui/material";
+import { Stepper, Step, StepLabel, Box } from "@mui/material";
 import React, { useContext } from "react";
 import FinalStep from "./FinalStep/FinalStep";
 import MustInfo from "./MustInfo/MustInfo";
@@ -34,9 +34,9 @@ export default function RegForm() {
     }
   };
   return (
-    <div>
+    <Box sx={{ width: "80%", mx: "auto" }}>
       <Stepper
-        style={{ width: "80%" }}
+        style={{ width: "100%" }}
         activeStep={courrentStep - 1}
         orientation="horizontal"
       >
@@ -47,6 +47,6 @@ export default function RegForm() {
         ))}
       </Stepper>
       <div>{shotSteps(courrentStep)}</div>
-    </div>
+    </Box>
   );
 }

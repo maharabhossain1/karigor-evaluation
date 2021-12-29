@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Box, FormControl, MenuItem, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { multiStepContext } from "../../context/StepContext";
 
 const classinformations = [
   {
@@ -25,7 +26,7 @@ const classinformations = [
 export default function MustInfo() {
   const [mustInfoData, setMustInfoData] = useState({});
   const [classData, setClassData] = React.useState("");
-
+  const { setCourrentStep } = useContext(multiStepContext);
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -119,7 +120,9 @@ export default function MustInfo() {
         </Grid>
       </Grid>
       <Box>
-        <Button variant="contained">Next</Button>
+        <Button onClick={() => setCourrentStep(2)} variant="contained">
+          Next
+        </Button>
       </Box>
     </Box>
   );
