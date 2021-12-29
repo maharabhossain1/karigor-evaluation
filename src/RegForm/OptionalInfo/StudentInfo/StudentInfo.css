@@ -1,0 +1,27 @@
+/* input-field */
+.student-info {
+  background-color: #ffffff;
+  border: 1px solid #e7e8fa;
+  border-radius: 15px;
+  padding: 20px 20px 20px 40px;
+}
+.student-info .input-field {
+  padding: 10px 5px;
+}
+.student-info .input-field label {
+  width: 150px;
+  display: inline-block;
+  font-weight: bold;
+  color: #616365;
+}
+.student-info .input-field input {
+  height: 40px;
+  width: 16rem;
+  background: #fafafa;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+}
+.student-info .input-field input:focus {
+  outline: none !important;
+  border: 2px solid#008ad9;
+}

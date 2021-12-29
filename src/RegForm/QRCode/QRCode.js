@@ -7,7 +7,9 @@ export default function QRCode() {
   const { setCourrentStep } = useContext(multiStepContext);
 
   return (
-    <Box>
+    <Box
+      sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
+    >
       <Box
         sx={{
           width: "20%",
@@ -41,10 +43,25 @@ export default function QRCode() {
           এর সাহায্যে এই কোড টি স্ক্যান করুন
         </Typography>
       </Box>
-      <Box>
-        <Button onClick={() => setCourrentStep(3)} variant="contained">
-          Next
-        </Button>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          p: 4,
+          border: "1px solid #E7E8FA",
+          borderRadius: "0px 0px 15px 15px",
+        }}
+      >
+        <div>
+          <Button onClick={() => setCourrentStep(1)} variant="contained">
+            Back
+          </Button>
+        </div>
+        <div>
+          <Button onClick={() => setCourrentStep(3)} variant="contained">
+            Next
+          </Button>
+        </div>
       </Box>
     </Box>
   );
