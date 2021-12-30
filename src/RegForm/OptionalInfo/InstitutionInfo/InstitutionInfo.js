@@ -3,7 +3,7 @@ import React from "react";
 
 export default function InstitutionInfo() {
   return (
-    <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+    <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
       <Box sx={{ color: "#728FB4", py: "1rem" }}>
         <Typography variant="h5" style={{ fontWeight: "bold" }}>
           প্রাতিষ্ঠানিক তথ্য

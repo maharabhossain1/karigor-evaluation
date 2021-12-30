@@ -12,9 +12,9 @@ export default function QRCode() {
     >
       <Box
         sx={{
-          width: "20%",
+          width: "60%",
           mx: "auto",
-          p: 1,
+          p: 0.5,
           my: 2,
           border: "1px solid gray",
           borderRadius: "15px",
@@ -29,9 +29,10 @@ export default function QRCode() {
       </Box>
       <Box
         sx={{
-          width: "40%",
+          width: "75%",
           mx: "auto",
-          p: 5,
+          py: 3,
+          px: 2,
           my: 5,
           border: "1px solid red",
           backgroundColor: "#FFF3F1",

@@ -4,7 +4,7 @@ import "./StudentInfo.css";
 
 export default function StudentInfo() {
   return (
-    <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+    <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
       <Box sx={{ color: "#728FB4", py: "1rem" }}>
         <Typography variant="h5" style={{ fontWeight: "bold" }}>
           ব্যক্তিগত তথ্য
