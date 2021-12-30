@@ -7,3 +7,18 @@
   height: 6rem;
   background-color: #0faf51;
 }
+
+.final-btn-box .btn-box {
+  width: max-content;
+  margin: auto;
+}
+
+.btn-box Button {
+  padding: 14px 60px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+#confirm-btn {
+  background-color: #0faf51;
+}
