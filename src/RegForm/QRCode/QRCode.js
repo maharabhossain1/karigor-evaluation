@@ -1,5 +1,4 @@
-import { Typography, Button } from "@mui/material";
-import { Box } from "@mui/system";
+import { Typography, Button, Box } from "@mui/material";
 import React, { useContext } from "react";
 import { multiStepContext } from "../../context/StepContext";
 

@@ -1,31 +1,11 @@
 import React, { useContext, useState } from "react";
-import TextField from "@mui/material/TextField";
-import { Box, FormControl, MenuItem, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { multiStepContext } from "../../context/StepContext";
-
-const classinformations = [
-  {
-    value: "কাফিয়া",
-    label: "কাফিয়া",
-  },
-  {
-    value: "শরহে বেকায়া",
-    label: "শরহে বেকায়া",
-  },
-  {
-    value: "মিশকাত",
-    label: "মিশকাত",
-  },
-  {
-    value: "দাওরায়ে হাদীস",
-    label: "দাওরায়ে হাদীস",
-  },
-];
+import "../OptionalInfo/StudentInfo/StudentInfo.css";
 
 export default function MustInfo() {
   const [mustInfoData, setMustInfoData] = useState({});
-  const [classData, setClassData] = React.useState("");
   const { setCourrentStep } = useContext(multiStepContext);
   const handleOnBlur = (e) => {
     const field = e.target.name;
@@ -34,95 +14,118 @@ export default function MustInfo() {
     newInfo[field] = value;
     setMustInfoData(newInfo);
   };
-  const handleClassData = (event) => {
-    const studentClass = event.target.value;
-    setClassData(studentClass);
-  };
-  console.log(mustInfoData, classData);
+  console.log(mustInfoData);
   return (
-    <Box component="form" sx={{ width: "75%", mx: "auto", flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Student Name"
-              name="studentName"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Father Name"
-              name="fatherName"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Mobile Number"
-              name="mobileNumber"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl></FormControl>
+    <Box
+      sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
+    >
+      <Box sx={{ height: "70vh", overflow: "scroll", px: 1.5 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} sx={{ mx: "auto" }}>
+            <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+              <div className="input-field">
+                <label htmlFor="text">নাম</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="studentName"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">পিতার নাম</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="fatherName"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">জন্ম তারিখ</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="birthday"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">মোবাইল নাম্বার</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="number"
+                  className="input"
+                  name="mobileNumber"
+                />
+              </div>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+              <div className="input-field">
+                <label htmlFor="text">ক্লাস</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="studentClass"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">ভর্তির তারিখ</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="admissionDate"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">ভর্তি পরীক্ষার মার্কস</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="admissionTestMarks"
+                />
+              </div>
+              <div className="input-field">
+                <label htmlFor="text">ভর্তির ফিস</label>
+                <input
+                  onBlur={handleOnBlur}
+                  type="text"
+                  className="input"
+                  name="admissionFee"
+                />
+              </div>
+            </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-select-currency"
-              select
-              label="Select Your Class"
-              name="studentClass"
-              value={classData}
-              onBlur={handleOnBlur}
-              onChange={handleClassData}
-            >
-              {classinformations.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </FormControl>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Admission Date"
-              name="admissionDate"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Admission Test Marks"
-              name="admissionTestMarks"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl fullWidth sx={{ m: 3 }} variant="outlined">
-            <TextField
-              id="outlined-basic"
-              label="Admisssion Fee"
-              name="admissionFee"
-              onBlur={handleOnBlur}
-              variant="outlined"
-            />
-          </FormControl>
-        </Grid>
-      </Grid>
-      <Box>
-        <Button onClick={() => setCourrentStep(2)} variant="contained">
-          Next
-        </Button>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          p: 4,
+          border: "1px solid #E7E8FA",
+          borderRadius: "0px 0px 15px 15px",
+        }}
+      >
+        <div>
+          <Button
+            disabled
+            onClick={() => setCourrentStep(2)}
+            variant="contained"
+          >
+            Back
+          </Button>
+        </div>
+        <div>
+          <Button onClick={() => setCourrentStep(2)} variant="contained">
+            Next
+          </Button>
+        </div>
       </Box>
     </Box>
   );
