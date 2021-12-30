@@ -7,7 +7,8 @@ import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 
 export default function MustInfo() {
   const [mustInfoData, setMustInfoData] = useState({});
-  const { setCourrentStep } = useContext(multiStepContext);
+  const { setCourrentStep, userData, setUserData } =
+    useContext(multiStepContext);
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -16,18 +17,23 @@ export default function MustInfo() {
     setMustInfoData(newInfo);
   };
   console.log(mustInfoData);
+  const handleOnNextStep = () => {
+    setUserData(mustInfoData);
+    setCourrentStep(2);
+  };
   return (
     <Box
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
-      <Box sx={{ height: "63vh", overflow: "scroll", px: 1.5 }}>
+      <Box sx={{ height: "63vh", overflow: "scroll" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
-            <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+            <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
               <div className="input-field">
                 <label htmlFor="text">নাম</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.studentName || ""}
                   type="text"
                   className="input"
                   name="studentName"
@@ -38,6 +44,7 @@ export default function MustInfo() {
                 <input
                   onBlur={handleOnBlur}
                   type="text"
+                  defaultValue={userData.fatherName || ""}
                   className="input"
                   name="fatherName"
                 />
@@ -46,6 +53,7 @@ export default function MustInfo() {
                 <label htmlFor="text">জন্ম তারিখ</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.birthday || ""}
                   type="text"
                   className="input"
                   name="birthday"
@@ -55,6 +63,7 @@ export default function MustInfo() {
                 <label htmlFor="text">মোবাইল নাম্বার</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.mobileNumber || ""}
                   type="number"
                   className="input"
                   name="mobileNumber"
@@ -63,11 +72,12 @@ export default function MustInfo() {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
+            <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
               <div className="input-field">
                 <label htmlFor="text">ক্লাস</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.studentClass || ""}
                   type="text"
                   className="input"
                   name="studentClass"
@@ -77,6 +87,7 @@ export default function MustInfo() {
                 <label htmlFor="text">ভর্তির তারিখ</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.admissionDate || ""}
                   type="text"
                   className="input"
                   name="admissionDate"
@@ -86,6 +97,7 @@ export default function MustInfo() {
                 <label htmlFor="text">ভর্তি পরীক্ষার মার্কস</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.admissionTestMarks || ""}
                   type="text"
                   className="input"
                   name="admissionTestMarks"
@@ -95,6 +107,7 @@ export default function MustInfo() {
                 <label htmlFor="text">ভর্তির ফিস</label>
                 <input
                   onBlur={handleOnBlur}
+                  defaultValue={userData.admissionFee || ""}
                   type="text"
                   className="input"
                   name="admissionFee"
@@ -108,7 +121,8 @@ export default function MustInfo() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          p: 4,
+          py: 3,
+          px: 0.5,
           border: "1px solid #E7E8FA",
           borderRadius: "0px 0px 15px 15px",
         }}
@@ -120,7 +134,7 @@ export default function MustInfo() {
             color="error"
             style={{ verticalAlign: "middle" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
               যান
             </span>
@@ -129,11 +143,11 @@ export default function MustInfo() {
         <div>
           <Button
             className="confirm-btn"
-            onClick={() => setCourrentStep(2)}
+            onClick={handleOnNextStep}
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               এগিয়ে চলুন{" "}
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>

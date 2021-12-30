@@ -20,8 +20,8 @@ export default function Notes() {
       <Box sx={{ height: "63vh", overflow: "scroll", px: 1.5 }}>
         <Grid container spacing={1} justifyContent="center">
           {notesData.map((note) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <NoteCard key={note.studentId} note={note} />
+            <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
+              <NoteCard note={note} />
             </Grid>
           ))}
         </Grid>
@@ -30,7 +30,8 @@ export default function Notes() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          p: 4,
+          py: 3,
+          px: 0.5,
           border: "1px solid #E7E8FA",
           borderRadius: "0px 0px 15px 15px",
         }}
@@ -42,7 +43,7 @@ export default function Notes() {
             color="error"
             style={{ verticalAlign: "middle" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
               যান
             </span>
@@ -55,7 +56,7 @@ export default function Notes() {
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               এগিয়ে চলুন{" "}
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>

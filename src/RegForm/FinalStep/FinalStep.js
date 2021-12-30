@@ -19,9 +19,11 @@ export default function FinalStep() {
       </Box>
       <Box
         sx={{
-          width: "40%",
+          textAlign: "center",
+          width: "65%",
           mx: "auto",
-          p: 6,
+          py: 5,
+          px: 1,
           my: 5,
           border: "1px solid #0FAF51",
           backgroundColor: "#EFFFF6",
@@ -36,7 +38,7 @@ export default function FinalStep() {
       <Box className="final-btn-box">
         <Box className="btn-box">
           <Button variant="contained" id="confirm-btn">
-            <BsCheck2Circle style={{ margin: "0px 15px" }} /> ভর্তি প্রক্রিয়া
+            <BsCheck2Circle style={{ margin: "0px 1.5vw" }} /> ভর্তি প্রক্রিয়া
             সমাপ্ত করুন
           </Button>
         </Box>
@@ -46,7 +48,7 @@ export default function FinalStep() {
             variant="outlined"
             color="error"
           >
-            <HiOutlineArrowLeft style={{ margin: "0px 15px" }} /> তথ্য পরিবর্তন
+            <HiOutlineArrowLeft style={{ margin: "0px 1.5vw" }} /> তথ্য পরিবর্তন
             করুন
           </Button>
         </Box>

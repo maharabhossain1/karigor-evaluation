@@ -35,7 +35,7 @@ export default function RegForm() {
   };
   return (
     <Box sx={{ my: 1 }}>
-      <Box sx={{ my: 1, py: 1, px: 5, textAlign: "center" }}>
+      <Box sx={{ my: 1, py: 1, textAlign: "center" }}>
         <Typography
           variant="h5"
           style={{ fontWeight: "bold", color: "#728FB4" }}
@@ -43,7 +43,7 @@ export default function RegForm() {
           ভর্তি প্রক্রিয়া
         </Typography>
       </Box>
-      <Box sx={{ width: "80%", mx: "auto" }}>
+      <Box sx={{ width: "95%", mx: "auto" }}>
         <Stepper
           style={{ width: "100%" }}
           activeStep={courrentStep - 1}

@@ -26,7 +26,8 @@ export default function OptionalInfo() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          p: 4,
+          py: 3,
+          px: 0.5,
           border: "1px solid #E7E8FA",
           borderRadius: "0px 0px 15px 15px",
         }}
@@ -38,7 +39,7 @@ export default function OptionalInfo() {
             color="error"
             style={{ verticalAlign: "middle" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
               যান
             </span>
@@ -51,7 +52,7 @@ export default function OptionalInfo() {
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               এগিয়ে চলুন{" "}
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>
