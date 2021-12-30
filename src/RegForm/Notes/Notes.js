@@ -18,7 +18,7 @@ export default function Notes() {
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
       <Box sx={{ height: "63vh", overflow: "scroll", px: 1.5 }}>
-        <Grid container spacing={1} justifyContent="center">
+        <Grid container spacing={1}>
           {notesData.map((note) => (
             <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
               <NoteCard note={note} />
