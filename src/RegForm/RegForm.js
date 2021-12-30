@@ -1,4 +1,4 @@
-import { Stepper, Step, StepLabel, Box } from "@mui/material";
+import { Stepper, Step, StepLabel, Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import FinalStep from "./FinalStep/FinalStep";
 import MustInfo from "./MustInfo/MustInfo";
@@ -34,19 +34,29 @@ export default function RegForm() {
     }
   };
   return (
-    <Box sx={{ width: "80%", mx: "auto" }}>
-      <Stepper
-        style={{ width: "100%" }}
-        activeStep={courrentStep - 1}
-        orientation="horizontal"
-      >
-        {steps.map((lable, i) => (
-          <Step key={i}>
-            <StepLabel>{lable}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      <div>{shotSteps(courrentStep)}</div>
+    <Box sx={{ my: 1 }}>
+      <Box sx={{ my: 1, py: 1, px: 5, textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          style={{ fontWeight: "bold", color: "#728FB4" }}
+        >
+          ভর্তি প্রক্রিয়া
+        </Typography>
+      </Box>
+      <Box sx={{ width: "80%", mx: "auto" }}>
+        <Stepper
+          style={{ width: "100%" }}
+          activeStep={courrentStep - 1}
+          orientation="horizontal"
+        >
+          {steps.map((lable, i) => (
+            <Step key={i}>
+              <StepLabel style={{ display: "block" }}>{lable}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <div style={{ margin: "25px 0px" }}>{shotSteps(courrentStep)}</div>
+      </Box>
     </Box>
   );
 }
