@@ -8,14 +8,14 @@ export default function QRCode() {
 
   return (
     <Box
-      sx={{ border: "1px solid #E7E8FA", pt: 1, borderRadius: "15px", my: 1 }}
+      sx={{ border: "1px solid #E7E8FA", pt: 2.5, borderRadius: "15px", my: 1 }}
     >
       <Box
         sx={{
           width: "20%",
           mx: "auto",
-          p: 2,
-          my: 3,
+          p: 1,
+          my: 2,
           border: "1px solid gray",
           borderRadius: "15px",
         }}

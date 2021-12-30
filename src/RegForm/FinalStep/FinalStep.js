@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { Box, Button, Typography } from "@mui/material";
 import "./FinalStep.css";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
+import { multiStepContext } from "../../context/StepContext";
 
 export default function FinalStep() {
+  const { setCourrentStep } = useContext(multiStepContext);
   return (
     <div>
       <Box>
@@ -39,7 +41,11 @@ export default function FinalStep() {
           </Button>
         </Box>
         <Box className="btn-box">
-          <Button variant="outlined" color="error">
+          <Button
+            onClick={() => setCourrentStep(4)}
+            variant="outlined"
+            color="error"
+          >
             <HiOutlineArrowLeft style={{ margin: "0px 15px" }} /> তথ্য পরিবর্তন
             করুন
           </Button>
