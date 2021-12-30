@@ -3,6 +3,7 @@ import { Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { multiStepContext } from "../../context/StepContext";
 import "../OptionalInfo/StudentInfo/StudentInfo.css";
+import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 
 export default function MustInfo() {
   const [mustInfoData, setMustInfoData] = useState({});
@@ -21,7 +22,7 @@ export default function MustInfo() {
     >
       <Box sx={{ height: "70vh", overflow: "scroll", px: 1.5 }}>
         <Grid container spacing={2}>
-          <Grid item xs={6} sx={{ mx: "auto" }}>
+          <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
             <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
               <div className="input-field">
                 <label htmlFor="text">নাম</label>
@@ -61,7 +62,7 @@ export default function MustInfo() {
               </div>
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box className="student-info" sx={{ width: "85%", mx: "auto " }}>
               <div className="input-field">
                 <label htmlFor="text">ক্লাস</label>
@@ -115,15 +116,27 @@ export default function MustInfo() {
         <div>
           <Button
             disabled
-            onClick={() => setCourrentStep(2)}
-            variant="contained"
+            variant="outlined"
+            color="error"
+            style={{ verticalAlign: "middle" }}
           >
-            Back
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
+              যান
+            </span>
           </Button>
         </div>
         <div>
-          <Button onClick={() => setCourrentStep(2)} variant="contained">
-            Next
+          <Button
+            className="confirm-btn"
+            onClick={() => setCourrentStep(2)}
+            variant="contained"
+            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              এগিয়ে চলুন{" "}
+              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </span>
           </Button>
         </div>
       </Box>

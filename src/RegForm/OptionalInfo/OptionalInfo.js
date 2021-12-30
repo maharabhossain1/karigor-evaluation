@@ -14,10 +14,10 @@ export default function OptionalInfo() {
     >
       <Box sx={{ height: "70vh", overflow: "scroll" }}>
         <Grid container spacing={1}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <StudentInfo />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <InstitutionInfo />
           </Grid>
         </Grid>
