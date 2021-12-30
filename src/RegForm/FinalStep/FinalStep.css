@@ -1,0 +1,9 @@
+.check-icon-box {
+  padding: 8px;
+  margin: auto;
+  color: aliceblue;
+  border-radius: 50%;
+  width: min-content;
+  height: 6rem;
+  background-color: #0faf51;
+}

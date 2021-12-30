@@ -1,6 +1,7 @@
 import { Typography, Button, Box } from "@mui/material";
 import React, { useContext } from "react";
 import { multiStepContext } from "../../context/StepContext";
+import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 
 export default function QRCode() {
   const { setCourrentStep } = useContext(multiStepContext);
@@ -52,13 +53,29 @@ export default function QRCode() {
         }}
       >
         <div>
-          <Button onClick={() => setCourrentStep(1)} variant="contained">
-            Back
+          <Button
+            onClick={() => setCourrentStep(1)}
+            variant="outlined"
+            color="error"
+            style={{ verticalAlign: "middle" }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
+              যান
+            </span>
           </Button>
         </div>
         <div>
-          <Button onClick={() => setCourrentStep(3)} variant="contained">
-            Next
+          <Button
+            className="confirm-btn"
+            onClick={() => setCourrentStep(3)}
+            variant="contained"
+            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              এগিয়ে চলুন{" "}
+              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </span>
           </Button>
         </div>
       </Box>

@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import React, { useContext, useEffect, useState } from "react";
 import NoteCard from "./NoteCard/NoteCard";
 import { multiStepContext } from "../../context/StepContext";
+import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);
@@ -35,13 +36,29 @@ export default function Notes() {
         }}
       >
         <div>
-          <Button onClick={() => setCourrentStep(2)} variant="contained">
-            Back
+          <Button
+            onClick={() => setCourrentStep(2)}
+            variant="outlined"
+            color="error"
+            style={{ verticalAlign: "middle" }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
+              যান
+            </span>
           </Button>
         </div>
         <div>
-          <Button onClick={() => setCourrentStep(4)} variant="contained">
-            Next
+          <Button
+            className="confirm-btn"
+            onClick={() => setCourrentStep(4)}
+            variant="contained"
+            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+          >
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+              এগিয়ে চলুন{" "}
+              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </span>
           </Button>
         </div>
       </Box>
