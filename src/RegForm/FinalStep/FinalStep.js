@@ -11,6 +11,7 @@ export default function FinalStep() {
     useContext(multiStepContext);
 
   const handleFormSubmit = () => {
+    setCourrentStep(6);
     setFinalData(userData);
     console.log(finalData);
   };

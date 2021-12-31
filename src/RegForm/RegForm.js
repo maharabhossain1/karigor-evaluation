@@ -6,6 +6,7 @@ import Notes from "./Notes/Notes";
 import OptionalInfo from "./OptionalInfo/OptionalInfo";
 import QRCode from "./QRCode/QRCode";
 import { multiStepContext } from "../context/StepContext";
+import CompleteStep from "./CompleteStep/CompleteStep";
 
 const steps = [
   "আবশ্যিক তথ্য",
@@ -29,6 +30,8 @@ export default function RegForm() {
         return <OptionalInfo />;
       case 5:
         return <FinalStep />;
+      case 6:
+        return <CompleteStep />;
       default:
         break;
     }
