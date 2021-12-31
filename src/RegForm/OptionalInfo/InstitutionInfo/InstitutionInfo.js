@@ -18,7 +18,7 @@ export default function InstitutionInfo() {
       id: 2,
       label: "রোল",
       name: "studentRoll",
-      type: "text",
+      type: "number",
       placeholder: "Write Your Roll",
     },
     {
@@ -53,7 +53,7 @@ export default function InstitutionInfo() {
       id: 7,
       label: "হল সিট আইডি",
       name: "hallSeatID",
-      type: "text",
+      type: "number",
       placeholder: "Hall SeatID",
     },
     {

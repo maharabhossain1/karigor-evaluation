@@ -27,3 +27,6 @@
   outline: none !important;
   border: 2px solid#008ad9;
 }
+input[type="file"] {
+  color: #008ad9;
+}

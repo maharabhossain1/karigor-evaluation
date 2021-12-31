@@ -39,15 +39,8 @@ export default function StudentInfo() {
       id: 5,
       label: "জাতীয় পরিচয়পত্র নাম্বার",
       name: "NIDNumber",
-      type: "text",
+      type: "number",
       placeholder: "NID Number",
-    },
-    {
-      id: 6,
-      label: "ছাত্রের ছবি",
-      name: "StudentImage",
-      type: "text",
-      placeholder: "Student Image",
     },
     {
       id: 7,
@@ -97,6 +90,13 @@ export default function StudentInfo() {
       name: "bloodGroup",
       type: "text",
       placeholder: "BloodGroup",
+    },
+    {
+      id: 6,
+      label: "ছাত্রের ছবি",
+      name: "StudentImage",
+      type: "file",
+      placeholder: "Student Image",
     },
   ];
   const handleOnBlur = (e) => {

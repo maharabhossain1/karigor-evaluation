@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import NoteCard from "./NoteCard/NoteCard";
 import { multiStepContext } from "../../context/StepContext";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
+import { BsPlus } from "react-icons/bs";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);
@@ -17,7 +18,13 @@ export default function Notes() {
     <Box
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
-      <Box sx={{ height: "63vh", overflow: "scroll", px: 1.5 }}>
+      <Box
+        sx={{
+          height: "60vh",
+          overflow: "scroll",
+          px: 1.5,
+        }}
+      >
         <Grid container spacing={1}>
           {notesData.map((note) => (
             <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
@@ -26,6 +33,20 @@ export default function Notes() {
           ))}
         </Grid>
       </Box>
+      <Button
+        variant="contained"
+        style={{
+          verticalAlign: "middle",
+          backgroundColor: "#FFD78E",
+          margin: "2vh 1vw",
+        }}
+      >
+        <span
+          style={{ fontWeight: "bold", fontSize: "1.2rem", color: "black" }}
+        >
+          নোট যোগ করুন <BsPlus style={{ verticalAlign: "middle" }} />
+        </span>
+      </Button>
       <Box
         sx={{
           display: "flex",
