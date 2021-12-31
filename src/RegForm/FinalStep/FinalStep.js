@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { Box, Button, Typography } from "@mui/material";
 import "./FinalStep.css";
@@ -7,7 +7,16 @@ import { BsCheck2Circle } from "react-icons/bs";
 import { multiStepContext } from "../../context/StepContext";
 
 export default function FinalStep() {
-  const { setCourrentStep } = useContext(multiStepContext);
+  const { setCourrentStep, userData, finalData, setFinalData } =
+    useContext(multiStepContext);
+  const [jsonData, setJsonData] = useState([]);
+
+  const handleFormSubmit = () => {
+    setFinalData(userData);
+    const jsonCovertion = JSON.stringify(finalData);
+    setJsonData(jsonCovertion);
+    console.log(jsonData);
+  };
   return (
     <div>
       <Box>
@@ -37,7 +46,11 @@ export default function FinalStep() {
       </Box>
       <Box className="final-btn-box">
         <Box className="btn-box">
-          <Button variant="contained" id="confirm-btn">
+          <Button
+            onClick={handleFormSubmit}
+            variant="contained"
+            id="confirm-btn"
+          >
             <BsCheck2Circle style={{ margin: "0px 1.5vw" }} /> ভর্তি প্রক্রিয়া
             সমাপ্ত করুন
           </Button>

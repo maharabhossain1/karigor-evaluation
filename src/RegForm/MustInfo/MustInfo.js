@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { multiStepContext } from "../../context/StepContext";
@@ -6,19 +6,17 @@ import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 
 export default function MustInfo() {
-  const [mustInfoData, setMustInfoData] = useState({});
   const { setCourrentStep, userData, setUserData } =
     useContext(multiStepContext);
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    const newInfo = { ...mustInfoData };
+    const newInfo = { ...userData };
     newInfo[field] = value;
-    setMustInfoData(newInfo);
+    setUserData(newInfo);
   };
-  console.log(mustInfoData);
+  //////////////////////
   const handleOnNextStep = () => {
-    setUserData(mustInfoData);
     setCourrentStep(2);
   };
   return (

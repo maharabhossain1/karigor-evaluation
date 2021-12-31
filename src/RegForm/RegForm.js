@@ -10,7 +10,7 @@ import { multiStepContext } from "../context/StepContext";
 const steps = [
   "আবশ্যিক তথ্য",
   "ফিংগার প্রিন্ট",
-  "নোটস",
+  "নোটস দেখুন",
   "ঐচ্ছিক তথ্য",
   "ভর্তি সমাপ্ত",
 ];

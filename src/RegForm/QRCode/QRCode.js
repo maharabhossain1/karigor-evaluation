@@ -12,7 +12,7 @@ export default function QRCode() {
     >
       <Box
         sx={{
-          width: "60%",
+          width: "max-content",
           mx: "auto",
           p: 0.5,
           my: 2,
@@ -21,7 +21,7 @@ export default function QRCode() {
         }}
       >
         <img
-          style={{ height: "100%", width: "100%" }}
+          style={{ height: "45vh" }}
           src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
           alt=""
           loading="lazy"
