@@ -99,7 +99,7 @@ export default function MustInfo() {
                   <div key={id} className="input-field">
                     <label htmlFor="text">{label}</label>
                     <input
-                      // required="required"
+                      required="required"
                       onBlur={handleOnBlur}
                       defaultValue={userData[inputs.name] || ""}
                       {...other}
@@ -118,7 +118,7 @@ export default function MustInfo() {
                     <label htmlFor="text">{label}</label>
                     <input
                       onBlur={handleOnBlur}
-                      // required="required"
+                      required="required"
                       defaultValue={userData[inputs.name] || ""}
                       {...other}
                     />
