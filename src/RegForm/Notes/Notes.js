@@ -5,36 +5,52 @@ import NoteCard from "./NoteCard/NoteCard";
 import { multiStepContext } from "../../context/StepContext";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
+import AddNote from "./AddNote/AddNote";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);
+  const [addNotes, setAddNotes] = useState(false);
   const { setCourrentStep } = useContext(multiStepContext);
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => setNotesData(data));
   }, []);
+
+  const handelNoteAdd = () => {
+    setAddNotes(true);
+  };
   return (
     <Box
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
-      <Box
-        sx={{
-          height: "60vh",
-          overflow: "scroll",
-          px: 1.5,
-        }}
-      >
-        <Grid container spacing={1}>
-          {notesData.map((note) => (
-            <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
-              <NoteCard note={note} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      {addNotes ? (
+        <AddNote
+          setAddNotes={setAddNotes}
+          notesData={notesData}
+          setNotesData={setNotesData}
+        />
+      ) : (
+        <Box
+          sx={{
+            height: "60vh",
+            overflow: "scroll",
+            px: 1.5,
+          }}
+        >
+          <Grid container spacing={1}>
+            {notesData.map((note) => (
+              <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
+                <NoteCard note={note} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      )}
+      {/* Note Adding Button   */}
       <Button
         variant="contained"
+        onClick={handelNoteAdd}
         style={{
           verticalAlign: "middle",
           backgroundColor: "#FFD78E",
@@ -47,6 +63,8 @@ export default function Notes() {
           নোট যোগ করুন <BsPlus style={{ verticalAlign: "middle" }} />
         </span>
       </Button>
+      {/* ----------------------- */}
+      {/* Back and Forward button Box  */}
       <Box
         sx={{
           display: "flex",
