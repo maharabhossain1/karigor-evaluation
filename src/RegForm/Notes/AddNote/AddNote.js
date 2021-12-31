@@ -1,10 +1,34 @@
 import { Box, Typography, Button } from "@mui/material";
-import React from "react";
+import React, { useContext, useState } from "react";
+import { multiStepContext } from "../../../context/StepContext";
 import "./AddNote.css";
 
 export default function AddNote({ setAddNotes, notesData, setNotesData }) {
+  const { userData } = useContext(multiStepContext);
+  const basicInfo = {
+    studentId: Math.random(),
+    studentName: userData.studentName,
+    date: "10/12/2022",
+  };
+  const [noteText, setNoteText] = useState(basicInfo);
+  // for canceling adding note process
+  const handleCancelNote = () => {
+    setAddNotes(false);
+  };
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newInfo = { ...noteText };
+    newInfo[field] = value;
+    setNoteText(newInfo);
+  };
+
+  const handleConfimAdd = (e) => {
+    e.preventDefault();
+    setAddNotes(false);
+  };
   return (
-    <Box className="add-note-box">
+    <Box onSubmit={handleConfimAdd} component="form" className="add-note-box">
       <Box>
         <Typography
           variant="h5"
@@ -14,9 +38,10 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
         </Typography>
         <Box>
           <textarea
+            onBlur={handleOnBlur}
             rows="15"
             cols="50"
-            name="comment"
+            name="notes"
             form="usrform"
           ></textarea>
         </Box>
@@ -31,6 +56,7 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
       >
         <div>
           <Button
+            type="submit"
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#0FAF51" }}
           >
@@ -41,6 +67,7 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
         </div>
         <div>
           <Button
+            onClick={handleCancelNote}
             className="confirm-btn"
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#F7685B" }}
