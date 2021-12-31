@@ -29,7 +29,7 @@ export default function MustInfo() {
       id: 3,
       label: "জন্ম তারিখ",
       name: "birthday",
-      type: "text",
+      type: "date",
       placeholder: "Birthday",
     },
     {
@@ -52,21 +52,21 @@ export default function MustInfo() {
       id: 2,
       label: "ভর্তির তারিখ",
       name: "admissionDate",
-      type: "text",
+      type: "date",
       placeholder: "Admission Date",
     },
     {
       id: 3,
       label: "ভর্তি পরীক্ষার মার্কস",
       name: "admissionTestMarks",
-      type: "text",
+      type: "number",
       placeholder: "Admission Test Marks",
     },
     {
       id: 4,
       label: "ভর্তির ফিস",
       name: "admissionFee",
-      type: "text",
+      type: "number",
       placeholder: "Admission Fee",
     },
   ];
@@ -79,11 +79,14 @@ export default function MustInfo() {
     setUserData(newInfo);
   };
   //////////////////////
-  const handleOnNextStep = () => {
+  const handleOnNextStep = (e) => {
+    e.preventDefault();
     setCourrentStep(2);
   };
   return (
     <Box
+      component="form"
+      onSubmit={handleOnNextStep}
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
       <Box sx={{ height: "63vh", overflow: "scroll" }}>
@@ -96,6 +99,7 @@ export default function MustInfo() {
                   <div key={id} className="input-field">
                     <label htmlFor="text">{label}</label>
                     <input
+                      required="required"
                       onBlur={handleOnBlur}
                       defaultValue={userData[inputs.name] || ""}
                       {...other}
@@ -114,6 +118,7 @@ export default function MustInfo() {
                     <label htmlFor="text">{label}</label>
                     <input
                       onBlur={handleOnBlur}
+                      required="required"
                       defaultValue={userData[inputs.name] || ""}
                       {...other}
                     />
@@ -149,8 +154,8 @@ export default function MustInfo() {
         </div>
         <div>
           <Button
+            type="submit"
             className="confirm-btn"
-            onClick={handleOnNextStep}
             variant="contained"
             style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
           >
