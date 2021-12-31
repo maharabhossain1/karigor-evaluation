@@ -9,13 +9,10 @@ import { multiStepContext } from "../../context/StepContext";
 export default function FinalStep() {
   const { setCourrentStep, userData, finalData, setFinalData } =
     useContext(multiStepContext);
-  const [jsonData, setJsonData] = useState([]);
 
   const handleFormSubmit = () => {
     setFinalData(userData);
-    const jsonCovertion = JSON.stringify(finalData);
-    setJsonData(jsonCovertion);
-    console.log(jsonData);
+    console.log(finalData);
   };
   return (
     <div>
