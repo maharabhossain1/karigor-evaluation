@@ -5,6 +5,100 @@ import "./StudentInfo.css";
 
 export default function StudentInfo() {
   const { userData, setUserData } = useContext(multiStepContext);
+  /// Input filed Object which containts input attributes and label etc.
+  const inputArray = [
+    {
+      id: 1,
+      label: "ছাত্রের নাম (ইংরেজি)",
+      name: "studentNameEnglish",
+      type: "text",
+      placeholder: "Student Name English",
+    },
+    {
+      id: 2,
+      label: "ছাত্রের নাম (আরবী)",
+      name: "studentNameArabic",
+      type: "text",
+      placeholder: "Student Name Arabic",
+    },
+    {
+      id: 3,
+      label: "মাতার নাম",
+      name: "motherName",
+      type: "text",
+      placeholder: "Mother Name",
+    },
+    {
+      id: 4,
+      label: "জন্ম নিবন্ধন নাম্বার",
+      name: "BirthCertificateNumber",
+      type: "text",
+      placeholder: "Birth Certificate Number",
+    },
+    {
+      id: 5,
+      label: "জাতীয় পরিচয়পত্র নাম্বার",
+      name: "NIDNumber",
+      type: "text",
+      placeholder: "NID Number",
+    },
+    {
+      id: 6,
+      label: "ছাত্রের ছবি",
+      name: "StudentImage",
+      type: "text",
+      placeholder: "Student Image",
+    },
+    {
+      id: 7,
+      label: "লিঙ্গ",
+      name: "gender",
+      type: "text",
+      placeholder: "Gender",
+    },
+    {
+      id: 8,
+      label: "জাতীয়তা",
+      name: "nationality",
+      type: "text",
+      placeholder: "Nationality",
+    },
+    {
+      id: 9,
+      label: "বিভাগ",
+      name: "division",
+      type: "text",
+      placeholder: "Division",
+    },
+    {
+      id: 10,
+      label: "জেলা",
+      name: "district",
+      type: "text",
+      placeholder: "District",
+    },
+    {
+      id: 11,
+      label: "উপজেলা",
+      name: "upazila",
+      type: "text",
+      placeholder: "Upazila",
+    },
+    {
+      id: 12,
+      label: "ঠিকানা",
+      name: "address",
+      type: "text",
+      placeholder: "Address",
+    },
+    {
+      id: 13,
+      label: "রক্তের গ্রুপ",
+      name: "bloodGroup",
+      type: "text",
+      placeholder: "BloodGroup",
+    },
+  ];
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -19,136 +113,19 @@ export default function StudentInfo() {
           ব্যক্তিগত তথ্য
         </Typography>
       </Box>
-      <div className="input-field">
-        <label htmlFor="text">ছাত্রের নাম (ইংরেজি)</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.studentNameEnglish || ""}
-          type="text"
-          className="input"
-          name="studentNameEnglish"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="text">ছাত্রের নাম (আরবী)</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.studentNameArabic || ""}
-          type="text"
-          className="input"
-          name="studentNameArabic"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="text">মাতার নাম</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.motherName || ""}
-          type="text"
-          className="input"
-          name="motherName"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">জন্ম নিবন্ধন নাম্বার</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.borthCertificateNumber || ""}
-          type="number"
-          className="input"
-          name="borthCertificateNumber"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">জাতীয় পরিচয়পত্র নাম্বার</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.NIDNumber || ""}
-          type="number"
-          className="input"
-          name="NIDNumber"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">ছাত্রের ছবি</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.studentImage || ""}
-          type="text"
-          className="input"
-          name="studentImage"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">লিঙ্গ</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.sex || ""}
-          type="text"
-          className="input"
-          name="sex"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">জাতীয়তা</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.nationality || ""}
-          type="text"
-          className="input"
-          name="nationality"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">বিভাগ</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.division || ""}
-          type="text"
-          className="input"
-          name="division"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">জেলা</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.district || ""}
-          type="text"
-          className="input"
-          name="district"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">উপজেলা</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.upazila || ""}
-          type="text"
-          className="input"
-          name="upazila"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">ঠিকানা</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.address || ""}
-          type="text"
-          className="input"
-          name="address"
-        />
-      </div>
-      <div className="input-field">
-        <label htmlFor="number">রক্তের গ্রুপ</label>
-        <input
-          onBlur={handleOnBlur}
-          defaultValue={userData.bloodGroup || ""}
-          type="text"
-          className="input"
-          name="bloodGroup"
-        />
-      </div>
+      {inputArray.map((inputs) => {
+        const { label, id, ...other } = inputs;
+        return (
+          <div key={id} className="input-field">
+            <label htmlFor="text">{label}</label>
+            <input
+              onBlur={handleOnBlur}
+              defaultValue={userData[inputs.name] || ""}
+              {...other}
+            />
+          </div>
+        );
+      })}
     </Box>
   );
 }

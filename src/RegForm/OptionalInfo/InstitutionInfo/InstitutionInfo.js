@@ -5,6 +5,7 @@ import { multiStepContext } from "../../../context/StepContext";
 export default function InstitutionInfo() {
   const { userData, setUserData } = useContext(multiStepContext);
 
+  /// Input filed Object which containts input attributes and label etc.
   const inputArray = [
     {
       id: 1,
