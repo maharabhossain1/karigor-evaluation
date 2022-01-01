@@ -1,4 +1,3 @@
-/* input-field */
 .student-info {
   background-color: #ffffff;
   border: 1px solid #e7e8fa;
@@ -6,18 +5,18 @@
   padding: 2vw;
 }
 .student-info .input-field {
+  width: fit-content;
   padding: 10px 1vw;
   margin: auto;
 }
 .student-info .input-field label {
-  width: 200px;
+  width: 140px;
   display: inline-block;
   font-weight: bold;
   color: #616365;
 }
 .student-info .input-field input {
   height: 40px;
-  width: 41vw;
   padding-left: 1vw;
   background: #fafafa;
   border: 2px solid #e5e5e5;
