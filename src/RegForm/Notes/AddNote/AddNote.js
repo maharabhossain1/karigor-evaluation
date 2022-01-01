@@ -31,16 +31,13 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
     <Box onSubmit={handleConfimAdd} component="form" className="add-note-box">
       <Box>
         <Typography
-          variant="h5"
-          style={{ margin: "2vh 0", fontWeight: "bold" }}
+          style={{ margin: "2vh 0", fontSize: "1.2rem", fontWeight: "bold" }}
         >
           এই ছাত্রের সম্পর্কে নোট যোগ করুন
         </Typography>
         <Box>
           <textarea
             onBlur={handleOnBlur}
-            rows="15"
-            cols="50"
             name="notes"
             form="usrform"
           ></textarea>
@@ -48,7 +45,7 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
       </Box>
       <Box
         sx={{
-          display: "flex",
+          display: { xs: "block", md: "flex" },
           justifyContent: "space-between",
           py: 3,
           px: 0.5,
@@ -58,7 +55,11 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
           <Button
             type="submit"
             variant="contained"
-            style={{ verticalAlign: "middle", backgroundColor: "#0FAF51" }}
+            style={{
+              verticalAlign: "middle",
+              backgroundColor: "#0FAF51",
+              marginTop: "1vh",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               সেইভ করুন
@@ -70,7 +71,11 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
             onClick={handleCancelNote}
             className="confirm-btn"
             variant="contained"
-            style={{ verticalAlign: "middle", backgroundColor: "#F7685B" }}
+            style={{
+              verticalAlign: "middle",
+              backgroundColor: "#F7685B",
+              marginTop: "1vh",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
               বাদ দিন

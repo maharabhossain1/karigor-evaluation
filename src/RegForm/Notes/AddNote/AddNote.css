@@ -1,5 +1,5 @@
 .add-note-box {
-  width: 60%;
+  width: 70%;
   margin: auto;
   padding: 2vh 2vw;
   background-color: #fff4db;
@@ -9,6 +9,8 @@
   text-align: center;
 }
 .add-note-box textarea {
+  width: 80%;
+  min-height: 75px;
   border: none;
   border-radius: 15px;
   padding: 2vh 1vw;
