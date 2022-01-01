@@ -11,12 +11,15 @@ export default function Notes() {
   const [notesData, setNotesData] = useState([]);
   const [addNotes, setAddNotes] = useState(false);
   const { setCourrentStep } = useContext(multiStepContext);
+
+  // data fatching from ApI
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => setNotesData(data));
   }, []);
 
+  ///////////////////////
   const handelNoteAdd = () => {
     setAddNotes(true);
   };
@@ -24,6 +27,7 @@ export default function Notes() {
     <Box
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
+      {/* conditional rendaring for new note adding modal  */}
       {addNotes ? (
         <AddNote
           setAddNotes={setAddNotes}

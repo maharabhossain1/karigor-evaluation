@@ -40,6 +40,7 @@ export default function MustInfo() {
       placeholder: "Mobile Number",
     },
   ];
+  // second array
   const inputArray2 = [
     {
       id: 1,
@@ -71,6 +72,7 @@ export default function MustInfo() {
     },
   ];
 
+  ////////////////////////
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -129,6 +131,7 @@ export default function MustInfo() {
           </Grid>
         </Grid>
       </Box>
+      {/* Button box next and back button  */}
       <Box
         sx={{
           display: "flex",

@@ -8,6 +8,7 @@ import QRCode from "./QRCode/QRCode";
 import { multiStepContext } from "../context/StepContext";
 import CompleteStep from "./CompleteStep/CompleteStep";
 
+// steps array
 const steps = [
   "আবশ্যিক তথ্য",
   "ফিংগার প্রিন্ট",
@@ -18,6 +19,8 @@ const steps = [
 
 export default function RegForm() {
   const { courrentStep } = useContext(multiStepContext);
+
+  // step showing cases
   const shotSteps = (step) => {
     switch (step) {
       case 1:

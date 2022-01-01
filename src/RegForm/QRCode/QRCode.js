@@ -44,6 +44,9 @@ export default function QRCode() {
           এর সাহায্যে এই কোড টি স্ক্যান করুন
         </Typography>
       </Box>
+
+      {/* /////////////////////////////////// */}
+      {/* Button Box Forward and Back button  */}
       <Box
         sx={{
           display: "flex",

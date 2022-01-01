@@ -1,4 +1,3 @@
-/* note-container */
 .note-container {
   width: 16rem;
   margin: auto;
@@ -6,7 +5,6 @@
   box-sizing: border-box;
   border-radius: 10px;
 }
-/* note-info */
 .note-info {
   color: #9f9f9f;
   background: #fafafa;
@@ -18,10 +16,7 @@
 .note-text {
   padding: 16px;
 }
-
 .detail-note {
   padding: 0px 16px 10px;
   color: #4d53d9;
 }
-
-/* CgArrowLongRight */

@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { multiStepContext } from "../../../context/StepContext";
 import "./AddNote.css";
 
-export default function AddNote({ setAddNotes, notesData, setNotesData }) {
+export default function AddNote({ setAddNotes }) {
   const { userData } = useContext(multiStepContext);
   const basicInfo = {
     studentId: Math.random(),
@@ -15,6 +15,7 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
   const handleCancelNote = () => {
     setAddNotes(false);
   };
+  ///////////////////////
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -22,7 +23,7 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
     newInfo[field] = value;
     setNoteText(newInfo);
   };
-
+  ////////////////////////
   const handleConfimAdd = (e) => {
     e.preventDefault();
     setAddNotes(false);
@@ -43,6 +44,8 @@ export default function AddNote({ setAddNotes, notesData, setNotesData }) {
           ></textarea>
         </Box>
       </Box>
+      {/* ///////////////////////////////// */}
+      {/* Button Box cancel and save button */}
       <Box
         sx={{
           display: { xs: "block", md: "flex" },

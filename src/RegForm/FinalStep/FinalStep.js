@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { Box, Button, Typography } from "@mui/material";
 import "./FinalStep.css";
