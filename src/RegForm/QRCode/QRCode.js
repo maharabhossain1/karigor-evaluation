@@ -8,20 +8,20 @@ export default function QRCode() {
 
   return (
     <Box
-      sx={{ border: "1px solid #E7E8FA", pt: 2.5, borderRadius: "15px", my: 1 }}
+      sx={{ border: "1px solid #E7E8FA", pt: 1, borderRadius: "15px", my: 1 }}
     >
       <Box
         sx={{
           width: "max-content",
           mx: "auto",
           p: 0.5,
-          my: 2,
+          my: 1,
           border: "1px solid gray",
           borderRadius: "15px",
         }}
       >
         <img
-          style={{ height: "45vh" }}
+          style={{ height: "37vh" }}
           src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
           alt=""
           loading="lazy"
@@ -33,7 +33,7 @@ export default function QRCode() {
           mx: "auto",
           py: 3,
           px: 2,
-          my: 5,
+          my: 2,
           border: "1px solid red",
           backgroundColor: "#FFF3F1",
           borderRadius: "15px",

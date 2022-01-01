@@ -91,7 +91,7 @@ export default function MustInfo() {
       onSubmit={handleOnNextStep}
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
-      <Box sx={{ height: "63vh", overflow: "scroll" }}>
+      <Box sx={{ height: "60vh", overflow: "scroll" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
             <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>

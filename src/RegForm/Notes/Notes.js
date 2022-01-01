@@ -37,12 +37,12 @@ export default function Notes() {
       ) : (
         <Box
           sx={{
-            height: "60vh",
+            height: "50vh",
             overflow: "scroll",
             px: 1.5,
           }}
         >
-          <Grid container spacing={1}>
+          <Grid container spacing={2}>
             {notesData.map((note) => (
               <Grid key={note.studentId} item xs={12} sm={6} md={4} lg={3}>
                 <NoteCard note={note} />
