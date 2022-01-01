@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { Box, Button, Typography } from "@mui/material";
 import "./FinalStep.css";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
-import { multiStepContext } from "../../context/StepContext";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function FinalStep() {
   const { setCourrentStep, userData, finalData, setFinalData } =
-    useContext(multiStepContext);
+    useStepStates();
 
   const handleFormSubmit = () => {
     setCourrentStep(6);

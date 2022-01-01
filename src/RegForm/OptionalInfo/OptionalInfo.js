@@ -1,12 +1,12 @@
 import { Box, Grid, Button } from "@mui/material";
-import React, { useContext } from "react";
+import React from "react";
 import InstitutionInfo from "./InstitutionInfo/InstitutionInfo";
 import StudentInfo from "./StudentInfo/StudentInfo";
-import { multiStepContext } from "../../context/StepContext";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function OptionalInfo() {
-  const { setCourrentStep } = useContext(multiStepContext);
+  const { setCourrentStep } = useStepStates();
 
   return (
     <Box

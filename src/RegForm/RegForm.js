@@ -1,12 +1,12 @@
 import { Stepper, Step, StepLabel, Box, Typography } from "@mui/material";
-import React, { useContext } from "react";
+import React from "react";
 import FinalStep from "./FinalStep/FinalStep";
 import MustInfo from "./MustInfo/MustInfo";
 import Notes from "./Notes/Notes";
 import OptionalInfo from "./OptionalInfo/OptionalInfo";
 import QRCode from "./QRCode/QRCode";
-import { multiStepContext } from "../context/StepContext";
 import CompleteStep from "./CompleteStep/CompleteStep";
+import useStepStates from "../hooks/useStepStates";
 
 // steps array
 const steps = [
@@ -18,7 +18,7 @@ const steps = [
 ];
 
 export default function RegForm() {
-  const { courrentStep } = useContext(multiStepContext);
+  const { courrentStep } = useStepStates();
 
   // step showing cases
   const shotSteps = (step) => {

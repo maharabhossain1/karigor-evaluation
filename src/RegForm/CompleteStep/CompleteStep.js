@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import React, { useContext } from "react";
-import { multiStepContext } from "../../context/StepContext";
+import React from "react";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function CompleteStep() {
-  const { finalData } = useContext(multiStepContext);
+  const { finalData } = useStepStates();
   console.log(finalData);
   return (
     <div>

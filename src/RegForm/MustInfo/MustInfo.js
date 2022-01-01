@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { multiStepContext } from "../../context/StepContext";
 import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function MustInfo() {
-  const { setCourrentStep, userData, setUserData } =
-    useContext(multiStepContext);
+  const { setCourrentStep, userData, setUserData } = useStepStates();
 
   /// Input filed Object which containts input attributes and label etc.
   const inputArray = [

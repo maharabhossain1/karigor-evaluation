@@ -1,16 +1,16 @@
 import { Grid, Button } from "@mui/material";
 import Box from "@mui/material/Box";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NoteCard from "./NoteCard/NoteCard";
-import { multiStepContext } from "../../context/StepContext";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
 import AddNote from "./AddNote/AddNote";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);
   const [addNotes, setAddNotes] = useState(false);
-  const { setCourrentStep } = useContext(multiStepContext);
+  const { setCourrentStep } = useStepStates();
 
   // data fatching from ApI
   useEffect(() => {

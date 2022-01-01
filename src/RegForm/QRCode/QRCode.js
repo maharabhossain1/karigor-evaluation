@@ -1,10 +1,10 @@
 import { Typography, Button, Box } from "@mui/material";
-import React, { useContext } from "react";
-import { multiStepContext } from "../../context/StepContext";
+import React from "react";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
+import useStepStates from "../../hooks/useStepStates";
 
 export default function QRCode() {
-  const { setCourrentStep } = useContext(multiStepContext);
+  const { setCourrentStep } = useStepStates();
 
   return (
     <Box
