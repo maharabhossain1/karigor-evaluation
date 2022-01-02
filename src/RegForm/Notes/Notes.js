@@ -28,13 +28,7 @@ export default function Notes() {
       sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
     >
       {/* conditional rendaring for new note adding modal  */}
-      {addNotes ? (
-        <AddNote
-          setAddNotes={setAddNotes}
-          notesData={notesData}
-          setNotesData={setNotesData}
-        />
-      ) : (
+      <Box>
         <Box
           sx={{
             height: "50vh",
@@ -50,23 +44,24 @@ export default function Notes() {
             ))}
           </Grid>
         </Box>
-      )}
-      {/* Note Adding Button   */}
-      <Button
-        variant="contained"
-        onClick={handelNoteAdd}
-        style={{
-          verticalAlign: "middle",
-          backgroundColor: "#FFD78E",
-          margin: "2vh 1vw",
-        }}
-      >
-        <span
-          style={{ fontWeight: "bold", fontSize: "1.2rem", color: "black" }}
+        {/* Note Adding Button   */}
+        <Button
+          variant="contained"
+          onClick={handelNoteAdd}
+          style={{
+            verticalAlign: "middle",
+            backgroundColor: "#FFD78E",
+            margin: "2vh 1vw",
+          }}
         >
-          নোট যোগ করুন <BsPlus style={{ verticalAlign: "middle" }} />
-        </span>
-      </Button>
+          <span
+            style={{ fontWeight: "bold", fontSize: "1.2rem", color: "black" }}
+          >
+            নোট যোগ করুন <BsPlus style={{ verticalAlign: "middle" }} />
+          </span>
+        </Button>
+      </Box>
+
       {/* ----------------------- */}
       {/* Back and Forward button Box  */}
       <Box
@@ -106,6 +101,13 @@ export default function Notes() {
           </Button>
         </div>
       </Box>
+      {addNotes && (
+        <AddNote
+          setAddNotes={setAddNotes}
+          notesData={notesData}
+          setNotesData={setNotesData}
+        />
+      )}
     </Box>
   );
 }

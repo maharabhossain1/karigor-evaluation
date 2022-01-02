@@ -29,63 +29,65 @@ export default function AddNote({ setAddNotes }) {
     setAddNotes(false);
   };
   return (
-    <Box onSubmit={handleConfimAdd} component="form" className="add-note-box">
-      <Box>
-        <Typography
-          style={{ margin: "2vh 0", fontSize: "1.2rem", fontWeight: "bold" }}
-        >
-          এই ছাত্রের সম্পর্কে নোট যোগ করুন
-        </Typography>
+    <div className="modal-background" onClick={handleCancelNote}>
+      <Box onSubmit={handleConfimAdd} component="form" className="add-note-box">
         <Box>
-          <textarea
-            onBlur={handleOnBlur}
-            name="notes"
-            form="usrform"
-          ></textarea>
+          <Typography
+            style={{ margin: "2vh 0", fontSize: "1.2rem", fontWeight: "bold" }}
+          >
+            এই ছাত্রের সম্পর্কে নোট যোগ করুন
+          </Typography>
+          <Box>
+            <textarea
+              onBlur={handleOnBlur}
+              name="notes"
+              form="usrform"
+            ></textarea>
+          </Box>
+        </Box>
+        {/* ///////////////////////////////// */}
+        {/* Button Box cancel and save button */}
+        <Box
+          sx={{
+            display: { xs: "block", md: "flex" },
+            justifyContent: "space-between",
+            py: 3,
+            px: 0.5,
+          }}
+        >
+          <div>
+            <Button
+              type="submit"
+              variant="contained"
+              style={{
+                verticalAlign: "middle",
+                backgroundColor: "#0FAF51",
+                marginTop: "1vh",
+              }}
+            >
+              <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
+                সেইভ করুন
+              </span>
+            </Button>
+          </div>
+          <div>
+            <Button
+              onClick={handleCancelNote}
+              className="confirm-btn"
+              variant="contained"
+              style={{
+                verticalAlign: "middle",
+                backgroundColor: "#F7685B",
+                marginTop: "1vh",
+              }}
+            >
+              <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
+                বাদ দিন
+              </span>
+            </Button>
+          </div>
         </Box>
       </Box>
-      {/* ///////////////////////////////// */}
-      {/* Button Box cancel and save button */}
-      <Box
-        sx={{
-          display: { xs: "block", md: "flex" },
-          justifyContent: "space-between",
-          py: 3,
-          px: 0.5,
-        }}
-      >
-        <div>
-          <Button
-            type="submit"
-            variant="contained"
-            style={{
-              verticalAlign: "middle",
-              backgroundColor: "#0FAF51",
-              marginTop: "1vh",
-            }}
-          >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              সেইভ করুন
-            </span>
-          </Button>
-        </div>
-        <div>
-          <Button
-            onClick={handleCancelNote}
-            className="confirm-btn"
-            variant="contained"
-            style={{
-              verticalAlign: "middle",
-              backgroundColor: "#F7685B",
-              marginTop: "1vh",
-            }}
-          >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              বাদ দিন
-            </span>
-          </Button>
-        </div>
-      </Box>
-    </Box>
+    </div>
   );
 }
