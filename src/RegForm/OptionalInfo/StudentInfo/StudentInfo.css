@@ -28,3 +28,9 @@
 input[type="file"] {
   color: #008ad9;
 }
+
+@media only screen and (max-width: 600px) {
+  .student-info .input-field input {
+    width: 100%;
+  }
+}
