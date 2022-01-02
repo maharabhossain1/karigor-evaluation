@@ -1,15 +1,18 @@
-.css-qivjh0-MuiStepLabel-label.Mui-active {
+.css-qivjh0-MuiStepLabel-label.Mui-active,
+.css-farnub.Mui-active {
   color: #67c8ff !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
 }
 
-.css-qivjh0-MuiStepLabel-label.Mui-completed {
+.css-qivjh0-MuiStepLabel-label.Mui-completed,
+.css-farnub.Mui-completed {
   color: #008ad9 !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
 }
-.css-qivjh0-MuiStepLabel-label {
+.css-qivjh0-MuiStepLabel-label,
+.css-farnub {
   font-size: 0.9rem !important;
   font-weight: 700 !important;
 }
