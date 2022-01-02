@@ -46,6 +46,7 @@ const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   color: "#fff",
   width: 30,
   height: 30,
+  marginTop: "5px",
   display: "flex",
   borderRadius: "50%",
   justifyContent: "center",
@@ -145,7 +146,7 @@ export default function RegForm() {
   };
   return (
     <Box sx={{ my: 1 }}>
-      <Box sx={{ my: 1, py: 1, textAlign: "center" }}>
+      <Box sx={{ my: 1, textAlign: "center" }}>
         <Typography
           variant="h5"
           style={{ fontWeight: "bold", color: "#728FB4" }}
@@ -154,10 +155,11 @@ export default function RegForm() {
         </Typography>
       </Box>
       <Box sx={{ width: "95%", mx: "auto" }}>
-        <Stack sx={{ width: "100%", my: 4 }} spacing={4}>
+        <Stack sx={{ width: "100%", my: 2 }} spacing={4}>
           <Stepper
             style={{ width: "100%" }}
             activeStep={courrentStep - 1}
+            alternativeLabel
             orientation="horizontal"
             connector={<ColorlibConnector />}
           >

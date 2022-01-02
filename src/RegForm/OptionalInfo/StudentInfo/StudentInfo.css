@@ -1,8 +1,6 @@
 .student-info {
   background-color: #ffffff;
-  border: 1px solid #e7e8fa;
-  border-radius: 15px;
-  padding: 2vw;
+  padding: 0.5vw;
 }
 .student-info .input-field {
   padding: 10px 1vw;
@@ -17,7 +15,7 @@
 }
 .student-info .input-field input {
   height: 40px;
-  width: 97%;
+  width: 65%;
   padding-left: 1vw;
   background: #fafafa;
   border: 2px solid #e5e5e5;

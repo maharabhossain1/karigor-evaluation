@@ -85,12 +85,8 @@ export default function MustInfo() {
     setCourrentStep(2);
   };
   return (
-    <Box
-      component="form"
-      onSubmit={handleOnNextStep}
-      sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
-    >
-      <Box sx={{ height: "60vh", overflow: "scroll" }}>
+    <Box component="form" onSubmit={handleOnNextStep} sx={{ my: 2 }}>
+      <Box sx={{ overflow: "scroll" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
             <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
@@ -137,8 +133,6 @@ export default function MustInfo() {
           justifyContent: "space-between",
           py: 3,
           px: 0.5,
-          border: "1px solid #E7E8FA",
-          borderRadius: "0px 0px 15px 15px",
         }}
       >
         <div>
@@ -146,11 +140,15 @@ export default function MustInfo() {
             disabled
             variant="outlined"
             color="error"
-            style={{ verticalAlign: "middle" }}
+            style={{
+              verticalAlign: "middle",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
-              যান
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
             </span>
           </Button>
         </div>
@@ -159,10 +157,15 @@ export default function MustInfo() {
             type="submit"
             className="confirm-btn"
             variant="contained"
-            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+            style={{
+              verticalAlign: "middle",
+              backgroundColor: "#007BFF",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              এগিয়ে চলুন{" "}
+            <span style={{ fontSize: "1.4rem" }}>
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>
           </Button>

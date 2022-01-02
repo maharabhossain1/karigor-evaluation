@@ -24,16 +24,14 @@ export default function Notes() {
     setAddNotes(true);
   };
   return (
-    <Box
-      sx={{ border: "1px solid #E7E8FA", pt: 4, borderRadius: "15px", my: 2 }}
-    >
+    <Box sx={{ pt: 1, my: 1 }}>
       {/* conditional rendaring for new note adding modal  */}
       <Box>
         <Box
           sx={{
-            height: "50vh",
+            height: "65vh",
             overflow: "scroll",
-            px: 1.5,
+            px: 0.5,
           }}
         >
           <Grid container spacing={2}>
@@ -51,7 +49,7 @@ export default function Notes() {
           style={{
             verticalAlign: "middle",
             backgroundColor: "#FFD78E",
-            margin: "2vh 1vw",
+            margin: "1vh 1vw",
           }}
         >
           <span
@@ -68,10 +66,7 @@ export default function Notes() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          py: 3,
-          px: 0.5,
-          border: "1px solid #E7E8FA",
-          borderRadius: "0px 0px 15px 15px",
+          py: 1,
         }}
       >
         <div>
@@ -79,11 +74,15 @@ export default function Notes() {
             onClick={() => setCourrentStep(2)}
             variant="outlined"
             color="error"
-            style={{ verticalAlign: "middle" }}
+            style={{
+              verticalAlign: "middle",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
-              যান
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
             </span>
           </Button>
         </div>
@@ -92,10 +91,15 @@ export default function Notes() {
             className="confirm-btn"
             onClick={() => setCourrentStep(4)}
             variant="contained"
-            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+            style={{
+              verticalAlign: "middle",
+              backgroundColor: "#007BFF",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              এগিয়ে চলুন{" "}
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>
           </Button>

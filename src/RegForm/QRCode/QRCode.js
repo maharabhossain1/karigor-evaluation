@@ -7,9 +7,7 @@ export default function QRCode() {
   const { setCourrentStep } = useStepStates();
 
   return (
-    <Box
-      sx={{ border: "1px solid #E7E8FA", pt: 1, borderRadius: "15px", my: 1 }}
-    >
+    <Box sx={{ pt: 1, my: 1 }}>
       <Box
         sx={{
           width: "max-content",
@@ -52,9 +50,6 @@ export default function QRCode() {
           display: "flex",
           justifyContent: "space-between",
           py: 3,
-          px: 0.5,
-          border: "1px solid #E7E8FA",
-          borderRadius: "0px 0px 15px 15px",
         }}
       >
         <div>
@@ -62,11 +57,15 @@ export default function QRCode() {
             onClick={() => setCourrentStep(1)}
             variant="outlined"
             color="error"
-            style={{ verticalAlign: "middle" }}
+            style={{
+              verticalAlign: "middle",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} /> ফিরে
-              যান
+              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
             </span>
           </Button>
         </div>
@@ -75,10 +74,15 @@ export default function QRCode() {
             className="confirm-btn"
             onClick={() => setCourrentStep(3)}
             variant="contained"
-            style={{ verticalAlign: "middle", backgroundColor: "#007BFF" }}
+            style={{
+              verticalAlign: "middle",
+              backgroundColor: "#007BFF",
+              borderRadius: "50%",
+              width: "64px",
+              height: "64px",
+            }}
           >
             <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              এগিয়ে চলুন{" "}
               <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
             </span>
           </Button>
