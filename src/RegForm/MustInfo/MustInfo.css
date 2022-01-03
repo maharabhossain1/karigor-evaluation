@@ -1,0 +1,23 @@
+.custom-btn-forward {
+  vertical-align: middle;
+  background-color: #38a8ff !important;
+  width: 64px;
+  height: 64px;
+  border-radius: 50% !important;
+}
+.custom-btn-forward:hover {
+  background-color: #007bff !important ;
+}
+
+.custom-btn-backward {
+  vertical-align: middle;
+  background-color: #fff3f3 !important;
+  color: #eb5757 !important;
+  width: 64px;
+  height: 64px;
+  border-radius: 50% !important;
+}
+.custom-btn-backward:hover {
+  background-color: #eb5757 !important ;
+  color: white !important;
+}

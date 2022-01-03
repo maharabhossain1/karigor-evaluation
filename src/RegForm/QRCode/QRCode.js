@@ -55,23 +55,17 @@ export default function QRCode() {
         <div>
           <Button
             onClick={() => setCourrentStep(1)}
-            variant="outlined"
-            color="error"
-            style={{
-              verticalAlign: "middle",
-              borderRadius: "50%",
-              width: "64px",
-              height: "64px",
-            }}
+            variant="contained"
+            className="custom-btn-backward"
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowLeft
+              style={{ verticalAlign: "middle", fontSize: "1.5rem" }}
+            />
           </Button>
         </div>
         <div>
           <Button
-            className="confirm-btn"
+            className="custom-btn-forward "
             onClick={() => setCourrentStep(3)}
             variant="contained"
             style={{
@@ -82,9 +76,9 @@ export default function QRCode() {
               height: "64px",
             }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowRight
+              style={{ verticalAlign: "middle", fontSize: "1.5rem" }}
+            />
           </Button>
         </div>
       </Box>

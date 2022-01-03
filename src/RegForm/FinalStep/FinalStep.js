@@ -49,8 +49,13 @@ export default function FinalStep() {
             variant="contained"
             id="confirm-btn"
           >
-            <BsCheck2Circle style={{ margin: "0px 1.5vw" }} /> ভর্তি প্রক্রিয়া
-            সমাপ্ত করুন
+            <BsCheck2Circle
+              style={{
+                margin: "0px 1.5vw",
+                fontSize: "2rem",
+              }}
+            />
+            ভর্তি প্রক্রিয়া সমাপ্ত করুন
           </Button>
         </Box>
         <Box className="btn-box">
@@ -59,8 +64,10 @@ export default function FinalStep() {
             variant="outlined"
             color="error"
           >
-            <HiOutlineArrowLeft style={{ margin: "0px 1.5vw" }} /> তথ্য পরিবর্তন
-            করুন
+            <HiOutlineArrowLeft
+              style={{ margin: "0px 1.5vw", fontSize: "2rem" }}
+            />{" "}
+            তথ্য পরিবর্তন করুন
           </Button>
         </Box>
       </Box>

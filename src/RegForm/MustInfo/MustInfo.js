@@ -5,6 +5,7 @@ import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import useStepStates from "../../hooks/useStepStates";
 import FormInput from "../../FormInput/FormInput";
+import "./MustInfo.css";
 
 export default function MustInfo() {
   const { setCourrentStep, userData, setUserData } = useStepStates();
@@ -95,7 +96,7 @@ export default function MustInfo() {
   };
   return (
     <Box component="form" onSubmit={handleOnNextStep} sx={{ my: 2 }}>
-      <Box sx={{ overflow: "scroll" }}>
+      <Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
             <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
@@ -148,27 +149,23 @@ export default function MustInfo() {
               height: "64px",
             }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowLeft
+              style={{ verticalAlign: "middle", fontSize: "1.5rem" }}
+            />
           </Button>
         </div>
         <div>
           <Button
             type="submit"
-            className="confirm-btn"
+            className="custom-btn-forward "
             variant="contained"
-            style={{
-              verticalAlign: "middle",
-              backgroundColor: "#007BFF",
-              borderRadius: "50%",
-              width: "64px",
-              height: "64px",
-            }}
           >
-            <span style={{ fontSize: "1.4rem" }}>
-              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowRight
+              style={{
+                verticalAlign: "middle",
+                fontSize: "1.5rem",
+              }}
+            />
           </Button>
         </div>
       </Box>

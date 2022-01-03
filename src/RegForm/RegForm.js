@@ -53,7 +53,7 @@ const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   alignItems: "center",
   ...(ownerState.active && {
     backgroundColor: "#67C8FF",
-    boxShadow: "0 5px 10px 0 rgba(0,0,0,.25)",
+    boxShadow: "0 2px 5px 0 rgba(0,0,0,.25)",
   }),
   ...(ownerState.completed && {
     backgroundColor: " #008AD9",

@@ -72,36 +72,23 @@ export default function Notes() {
         <div>
           <Button
             onClick={() => setCourrentStep(2)}
-            variant="outlined"
-            color="error"
-            style={{
-              verticalAlign: "middle",
-              borderRadius: "50%",
-              width: "64px",
-              height: "64px",
-            }}
+            className="custom-btn-backward"
+            variant="contained"
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowLeft
+              style={{ verticalAlign: "middle", fontSize: "1.5rem" }}
+            />
           </Button>
         </div>
         <div>
           <Button
-            className="confirm-btn"
+            className="custom-btn-forward"
             onClick={() => setCourrentStep(4)}
             variant="contained"
-            style={{
-              verticalAlign: "middle",
-              backgroundColor: "#007BFF",
-              borderRadius: "50%",
-              width: "64px",
-              height: "64px",
-            }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              <HiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-            </span>
+            <HiOutlineArrowRight
+              style={{ verticalAlign: "middle", fontSize: "1.5rem" }}
+            />
           </Button>
         </div>
       </Box>
