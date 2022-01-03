@@ -19,16 +19,31 @@
   border: 2px solid #e5e5e5;
   border-radius: 5px;
 }
-.input-field input:focus {
+#custom-select {
+  height: 40px;
+  width: 63%;
+  font-size: 1rem;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background: #fafafa;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.input-field input:focus,
+#custom-select:focus {
   outline: none !important;
   border: 2px solid#008ad9;
 }
 input[type="file"] {
   color: #008ad9;
 }
-
+#option-placeholder {
+  color: #e5e5e5 !important;
+}
 @media only screen and (max-width: 600px) {
-  .input-field input {
+  .input-field input,
+  #custom-select {
     width: 100%;
   }
 }

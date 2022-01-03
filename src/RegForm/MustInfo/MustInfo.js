@@ -51,7 +51,8 @@ export default function MustInfo() {
       id: 1,
       label: "ক্লাস",
       name: "studentClass",
-      type: "text",
+      type: "select",
+      options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       placeholder: "Student Class",
       required: "required",
     },
@@ -89,6 +90,7 @@ export default function MustInfo() {
     newInfo[field] = value;
     setUserData(newInfo);
   };
+  console.log(userData);
   //////////////////////
   const handleOnNextStep = (e) => {
     e.preventDefault();
