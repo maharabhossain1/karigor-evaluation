@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { multiStepContext } from "../../../context/StepContext";
+import FormInput from "../../../FormInput/FormInput";
 import "./StudentInfo.css";
 
 export default function StudentInfo() {
@@ -113,19 +114,14 @@ export default function StudentInfo() {
           ব্যক্তিগত তথ্য
         </Typography>
       </Box>
-      {inputArray.map((inputs) => {
-        const { label, id, ...other } = inputs;
-        return (
-          <div key={id} className="input-field">
-            <label htmlFor="text">{label}</label>
-            <input
-              onBlur={handleOnBlur}
-              defaultValue={userData[inputs.name] || ""}
-              {...other}
-            />
-          </div>
-        );
-      })}
+      {inputArray.map((inputs) => (
+        <FormInput
+          key={inputs.id}
+          {...inputs}
+          value={userData[inputs.name]}
+          handleOnBlur={handleOnBlur}
+        />
+      ))}
     </Box>
   );
 }

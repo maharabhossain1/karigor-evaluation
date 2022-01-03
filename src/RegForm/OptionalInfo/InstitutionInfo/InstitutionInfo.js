@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { multiStepContext } from "../../../context/StepContext";
+import FormInput from "../../../FormInput/FormInput";
 
 export default function InstitutionInfo() {
   const { userData, setUserData } = useContext(multiStepContext);
@@ -87,16 +88,13 @@ export default function InstitutionInfo() {
         </Typography>
       </Box>
       {inputArray.map((inputs) => {
-        const { label, id, ...other } = inputs;
         return (
-          <div key={id} className="input-field">
-            <label htmlFor="text">{label}</label>
-            <input
-              onBlur={handleOnBlur}
-              defaultValue={userData[inputs.name] || ""}
-              {...other}
-            />
-          </div>
+          <FormInput
+            key={inputs.id}
+            {...inputs}
+            value={userData[inputs.name]}
+            handleOnBlur={handleOnBlur}
+          />
         );
       })}
     </Box>

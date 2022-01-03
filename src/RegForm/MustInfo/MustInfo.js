@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import useStepStates from "../../hooks/useStepStates";
+import FormInput from "../../FormInput/FormInput";
 
 export default function MustInfo() {
   const { setCourrentStep, userData, setUserData } = useStepStates();
@@ -16,6 +17,7 @@ export default function MustInfo() {
       name: "studentName",
       type: "text",
       placeholder: "Student Name",
+      required: "required",
     },
     {
       id: 2,
@@ -23,6 +25,7 @@ export default function MustInfo() {
       name: "fatherName",
       type: "text",
       placeholder: "Father Name",
+      required: "required",
     },
     {
       id: 3,
@@ -30,6 +33,7 @@ export default function MustInfo() {
       name: "birthday",
       type: "date",
       placeholder: "Birthday",
+      required: "required",
     },
     {
       id: 4,
@@ -37,6 +41,7 @@ export default function MustInfo() {
       name: "mobileNumber",
       type: "text",
       placeholder: "Mobile Number",
+      required: "required",
     },
   ];
   // second array
@@ -47,6 +52,7 @@ export default function MustInfo() {
       name: "studentClass",
       type: "text",
       placeholder: "Student Class",
+      required: "required",
     },
     {
       id: 2,
@@ -54,6 +60,7 @@ export default function MustInfo() {
       name: "admissionDate",
       type: "date",
       placeholder: "Admission Date",
+      required: "required",
     },
     {
       id: 3,
@@ -61,6 +68,7 @@ export default function MustInfo() {
       name: "admissionTestMarks",
       type: "number",
       placeholder: "Admission Test Marks",
+      required: "required",
     },
     {
       id: 4,
@@ -68,6 +76,7 @@ export default function MustInfo() {
       name: "admissionFee",
       type: "number",
       placeholder: "Admission Fee",
+      required: "required",
     },
   ];
 
@@ -91,17 +100,13 @@ export default function MustInfo() {
           <Grid item xs={12} md={6} sx={{ mx: "auto" }}>
             <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
               {inputArray.map((inputs) => {
-                const { label, id, ...other } = inputs;
                 return (
-                  <div key={id} className="input-field">
-                    <label htmlFor="text">{label}</label>
-                    <input
-                      required="required"
-                      onBlur={handleOnBlur}
-                      defaultValue={userData[inputs.name] || ""}
-                      {...other}
-                    />
-                  </div>
+                  <FormInput
+                    key={inputs.id}
+                    {...inputs}
+                    value={userData[inputs.name]}
+                    handleOnBlur={handleOnBlur}
+                  />
                 );
               })}
             </Box>
@@ -109,17 +114,13 @@ export default function MustInfo() {
           <Grid item xs={12} md={6}>
             <Box className="student-info" sx={{ width: "87%", mx: "auto " }}>
               {inputArray2.map((inputs) => {
-                const { label, id, ...other } = inputs;
                 return (
-                  <div key={id} className="input-field">
-                    <label htmlFor="text">{label}</label>
-                    <input
-                      onBlur={handleOnBlur}
-                      required="required"
-                      defaultValue={userData[inputs.name] || ""}
-                      {...other}
-                    />
-                  </div>
+                  <FormInput
+                    key={inputs.id}
+                    {...inputs}
+                    value={userData[inputs.name]}
+                    handleOnBlur={handleOnBlur}
+                  />
                 );
               })}
             </Box>
