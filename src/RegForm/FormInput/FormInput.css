@@ -19,10 +19,17 @@
   border: 2px solid #e5e5e5;
   border-radius: 5px;
 }
-#form-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+#custom-select {
+  width: 63%;
+  height: 47px;
+  font-size: 1rem;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background: #fafafa;
+  background-color: #fafafa;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
 }
 
 .input-field input:focus,
@@ -37,7 +44,8 @@ input[type="file"] {
   color: #e5e5e5 !important;
 }
 @media only screen and (max-width: 600px) {
-  .input-field input {
+  .input-field input,
+  .custom-select {
     width: 100%;
   }
 }

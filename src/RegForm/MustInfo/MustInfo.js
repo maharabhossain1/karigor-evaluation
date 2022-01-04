@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import useStepStates from "../../hooks/useStepStates";
-import FormInput from "../../FormInput/FormInput";
+import FormInput from "../FormInput/FormInput";
 import "./MustInfo.css";
 
 export default function MustInfo() {
