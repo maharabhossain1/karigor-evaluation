@@ -164,7 +164,6 @@ export default function MustInfo() {
           >
             <HiOutlineArrowRight
               style={{
-                verticalAlign: "middle",
                 fontSize: "1.5rem",
               }}
             />

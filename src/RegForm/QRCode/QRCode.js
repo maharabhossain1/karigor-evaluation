@@ -19,7 +19,7 @@ export default function QRCode() {
         }}
       >
         <img
-          style={{ height: "37vh" }}
+          style={{ height: "33vh" }}
           src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
           alt=""
           loading="lazy"
@@ -27,11 +27,12 @@ export default function QRCode() {
       </Box>
       <Box
         sx={{
-          width: "75%",
+          width: "60%",
           mx: "auto",
-          py: 3,
-          px: 2,
+          py: 5,
+          px: 4,
           my: 2,
+          textAlign: "center",
           border: "1px solid red",
           backgroundColor: "#FFF3F1",
           borderRadius: "15px",
@@ -39,7 +40,7 @@ export default function QRCode() {
       >
         <Typography variant="h6">
           ছাত্রের ফিঙ্গারপ্রিন্ট রেজিস্টার করার জন্য দয়া করে আমাদের মোবাইল অ্যাপ
-          এর সাহায্যে এই কোড টি স্ক্যান করুন
+          এর সাহায্যে এই কোড টি স্ক্যান করুন |
         </Typography>
       </Box>
 

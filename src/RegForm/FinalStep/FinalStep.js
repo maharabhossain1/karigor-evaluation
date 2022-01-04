@@ -27,9 +27,9 @@ export default function FinalStep() {
       <Box
         sx={{
           textAlign: "center",
-          width: "65%",
+          width: "50%",
           mx: "auto",
-          py: 5,
+          py: 6,
           px: 1,
           my: 5,
           border: "1px solid #0FAF51",

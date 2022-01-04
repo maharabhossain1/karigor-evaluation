@@ -47,7 +47,13 @@ export default function InstitutionInfo() {
       id: 6,
       label: "হল নির্বাচন",
       name: "hallSelection",
-      type: "text",
+      type: "select",
+      options: [
+        "Shahjalal Hall",
+        "Suhrawardy Hall",
+        "Shah Amanat Hall	",
+        "Shaheed Abdur Rab Hall	",
+      ],
       placeholder: "Hall Selection",
     },
     {
@@ -62,14 +68,14 @@ export default function InstitutionInfo() {
       label: "আর্থিক অবস্থা",
       name: "financialStatus",
       type: "text",
-      placeholder: "Financial Status",
+      placeholder: "সম্পূর্ণ অর্থপ্রদান / আংশিক / বিনামূল্যে",
     },
     {
       id: 9,
       label: "আবাসন",
       name: "accommodation",
       type: "text",
-      placeholder: "Accommodation",
+      placeholder: "আবাসিক / অনাবাসিক / ডে কেয়ার",
     },
   ];
   const handleOnBlur = (e) => {
