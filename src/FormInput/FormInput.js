@@ -1,3 +1,4 @@
+import { FormControl, MenuItem, Select } from "@mui/material";
 import { AiFillCaretDown } from "react-icons/ai";
 import useStepStates from "../hooks/useStepStates";
 import "./FormInput.css";
@@ -18,31 +19,21 @@ export default function FormInput(props) {
         // for farther implimentation
         <div></div>
       ) : others.type === "select" ? (
-        <div>
+        <div id="form-control">
           <label htmlFor="text">{label}</label>
-          <div className="custom-select-container">
-            <select
-              id="custom-select"
-              name={others.name}
+          <FormControl sx={{ width: "70%", mx: 3 }}>
+            <Select
               onChange={handleOnChange}
+              displayEmpty
+              inputProps={{ "aria-label": "Without label" }}
             >
-              <option value=""> Select an Option</option>
               {others.options.map((option, i) => (
-                <option key={i} value={option}>
+                <MenuItem key={i} value={option}>
                   {option}
-                </option>
+                </MenuItem>
               ))}
-            </select>
-            <span className="custom-arrow">
-              {" "}
-              <AiFillCaretDown
-                style={{
-                  verticalAlign: "middle",
-                  fontSize: "1.5rem",
-                }}
-              />
-            </span>
-          </div>
+            </Select>
+          </FormControl>
         </div>
       ) : (
         <div>
