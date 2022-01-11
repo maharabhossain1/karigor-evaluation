@@ -1,7 +1,7 @@
 import { Typography, Button, Box } from "@mui/material";
 import React from "react";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 
 export default function QRCode() {
   const { setCourrentStep } = useStepStates();

@@ -3,7 +3,7 @@ import React from "react";
 import InstitutionInfo from "./InstitutionInfo/InstitutionInfo";
 import StudentInfo from "./StudentInfo/StudentInfo";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 
 export default function OptionalInfo() {
   const { setCourrentStep } = useStepStates();

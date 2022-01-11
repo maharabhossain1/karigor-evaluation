@@ -4,7 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 import "./FinalStep.css";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 
 export default function FinalStep() {
   const { setCourrentStep, userData, finalData, setFinalData } =

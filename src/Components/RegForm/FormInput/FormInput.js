@@ -1,4 +1,4 @@
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 import "./FormInput.css";
 
 export default function FormInput(props) {

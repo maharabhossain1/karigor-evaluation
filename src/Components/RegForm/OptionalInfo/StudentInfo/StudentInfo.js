@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import { multiStepContext } from "../../../context/StepContext";
+import { multiStepContext } from "../../../../context/StepContext";
 import FormInput from "../../FormInput/FormInput";
 import "./StudentInfo.css";
 

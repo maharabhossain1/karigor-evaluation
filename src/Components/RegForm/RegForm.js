@@ -13,7 +13,7 @@ import Notes from "./Notes/Notes";
 import OptionalInfo from "./OptionalInfo/OptionalInfo";
 import QRCode from "./QRCode/QRCode";
 import CompleteStep from "./CompleteStep/CompleteStep";
-import useStepStates from "../hooks/useStepStates";
+import useStepStates from "../../hooks/useStepStates";
 import "./RegFrom.css";
 ////////////////////////
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({

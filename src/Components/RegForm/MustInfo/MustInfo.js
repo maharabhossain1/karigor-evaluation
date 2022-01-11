@@ -3,7 +3,7 @@ import { Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import "../OptionalInfo/StudentInfo/StudentInfo.css";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 import FormInput from "../FormInput/FormInput";
 import "./MustInfo.css";
 

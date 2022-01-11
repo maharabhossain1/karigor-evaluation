@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RegForm from "../RegForm/RegForm";
+import StudentReg from "../Pages/StudentReg/index";
 
 export const multiStepContext = React.createContext();
 
@@ -19,7 +19,7 @@ const StepContext = () => {
           setFinalData,
         }}
       >
-        <RegForm />
+        <StudentReg />
       </multiStepContext.Provider>
     </div>
   );

@@ -5,7 +5,7 @@ import NoteCard from "./NoteCard/NoteCard";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
 import AddNote from "./AddNote/AddNote";
-import useStepStates from "../../hooks/useStepStates";
+import useStepStates from "../../../hooks/useStepStates";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);

@@ -1,12 +1,12 @@
 import "./App.css";
 import StepContext from "./context/StepContext";
-import RegForm from "./RegForm/RegForm";
+import StudentReg from "./Pages/StudentReg/index";
 
 function App() {
   return (
     <div>
       <StepContext>
-        <RegForm />
+        <StudentReg />
       </StepContext>
     </div>
   );
