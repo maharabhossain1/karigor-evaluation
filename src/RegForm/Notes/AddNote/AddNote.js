@@ -3,14 +3,12 @@ import React, { useContext, useState } from "react";
 import { multiStepContext } from "../../../context/StepContext";
 import "./AddNote.css";
 
-export default function AddNote({ setAddNotes }) {
-  const { userData } = useContext(multiStepContext);
-  const basicInfo = {
+export default function AddNote({ setAddNotes, notesData, setNotesData }) {
+  const [noteText, setNoteText] = useState({
     studentId: Math.random(),
-    studentName: userData.studentName,
-    date: "10/12/2022",
-  };
-  const [noteText, setNoteText] = useState(basicInfo);
+    studentName: "জুবায়ের আহমেদ",
+    date: new Date().toLocaleDateString("bn-bd"),
+  });
   // for canceling adding note process
   const handleCancelNote = () => {
     setAddNotes(false);
@@ -27,9 +25,10 @@ export default function AddNote({ setAddNotes }) {
   const handleConfimAdd = (e) => {
     e.preventDefault();
     setAddNotes(false);
+    setNotesData([...notesData, noteText]);
   };
   return (
-    <div className="modal-background" onClick={handleCancelNote}>
+    <div className="modal-background">
       <Box onSubmit={handleConfimAdd} component="form" className="add-note-box">
         <Box>
           <Typography
