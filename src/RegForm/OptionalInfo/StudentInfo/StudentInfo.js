@@ -47,7 +47,8 @@ export default function StudentInfo() {
       id: 7,
       label: "লিঙ্গ",
       name: "gender",
-      type: "text",
+      type: "select",
+      options: ["পুরুষ", "মহিলা"],
       placeholder: "Gender",
     },
     {

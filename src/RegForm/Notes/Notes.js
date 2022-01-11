@@ -9,7 +9,6 @@ import useStepStates from "../../hooks/useStepStates";
 
 export default function Notes() {
   const [notesData, setNotesData] = useState([]);
-  const [newNotesData, setNewNotesData] = useState([]);
   const [addNotes, setAddNotes] = useState(false);
   const { setCourrentStep } = useStepStates();
 

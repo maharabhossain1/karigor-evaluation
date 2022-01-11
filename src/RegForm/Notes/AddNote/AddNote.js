@@ -1,6 +1,5 @@
 import { Box, Typography, Button } from "@mui/material";
-import React, { useContext, useState } from "react";
-import { multiStepContext } from "../../../context/StepContext";
+import React, { useState } from "react";
 import "./AddNote.css";
 
 export default function AddNote({ setAddNotes, notesData, setNotesData }) {
