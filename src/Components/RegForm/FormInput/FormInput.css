@@ -40,6 +40,35 @@
 input[type="file"] {
   color: #008ad9;
 }
+.file-container {
+  display: flex;
+}
+.upload-box {
+  background-color: #f4fbff;
+  border: 1px solid rgba(0, 138, 217, 0.5);
+  border-radius: 10px;
+  padding: 15px;
+}
+.image-upload-box {
+  position: relative;
+  border: 2px dashed #008ad9;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.image-upload-box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.text-about-upload {
+  text-align: center;
+  padding: 10px;
+}
 #option-placeholder {
   color: #e5e5e5 !important;
 }

@@ -1,3 +1,4 @@
+import { AiOutlineCloudUpload } from "react-icons/ai";
 import useStepStates from "../../../hooks/useStepStates";
 import "./FormInput.css";
 
@@ -15,7 +16,28 @@ export default function FormInput(props) {
     <div className="input-field">
       {others.type === "file" ? (
         // for farther implimentation
-        <div></div>
+        <div className="file-container">
+          <label htmlFor="text">{label}</label>
+          <div className="upload-box">
+            <div className="image-upload-box">
+              <div className="text-about-upload">
+                <AiOutlineCloudUpload
+                  style={{
+                    fontSize: "4rem",
+                    marginTop: "5px",
+                    color: "#008AD9",
+                  }}
+                />
+                <p>Click to choose your image file</p>
+              </div>
+              <input
+                onBlur={handleOnBlur}
+                defaultValue={value || ""}
+                {...others}
+              />
+            </div>
+          </div>
+        </div>
       ) : others.type === "select" ? (
         <div>
           <label htmlFor="text">{label}</label>
