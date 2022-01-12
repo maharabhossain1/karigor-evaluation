@@ -37,9 +37,10 @@
   outline: none !important;
   border: 2px solid#008ad9;
 }
-input[type="file"] {
-  color: #008ad9;
-}
+
+/*********************
+file upload related css
+ *********************/
 .file-container {
   display: flex;
 }
@@ -69,6 +70,7 @@ input[type="file"] {
   text-align: center;
   padding: 10px;
 }
+
 #option-placeholder {
   color: #e5e5e5 !important;
 }
@@ -76,5 +78,8 @@ input[type="file"] {
   .input-field input,
   .custom-select {
     width: 100%;
+  }
+  .file-container {
+    display: block;
   }
 }
