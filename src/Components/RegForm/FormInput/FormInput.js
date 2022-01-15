@@ -1,10 +1,23 @@
+import { useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import useStepStates from "../../../hooks/useStepStates";
 import "./FormInput.css";
 
 export default function FormInput(props) {
   const { userData, setUserData } = useStepStates();
+  const [imageFile, setImageFile] = useState("");
   const { label, handleOnBlur, value, ...others } = props;
+  const handleImageUpload = (e) => {
+    const newFile = e.target.files[0];
+    if (newFile) {
+      setImageFile(newFile);
+      const field = e.target.name;
+      const value = e.target.value;
+      const newValue = { ...userData };
+      newValue[field] = value;
+      setUserData(newValue);
+    }
+  };
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -31,11 +44,16 @@ export default function FormInput(props) {
                 <p>Click to choose your image file</p>
               </div>
               <input
-                onBlur={handleOnBlur}
+                onChange={handleImageUpload}
                 defaultValue={value || ""}
                 {...others}
               />
             </div>
+            {imageFile && (
+              <div style={{ marginTop: "20px" }}>
+                <small>{imageFile.name}</small>
+              </div>
+            )}
           </div>
         </div>
       ) : others.type === "select" ? (
