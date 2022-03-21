@@ -3,7 +3,7 @@ import StudentReg from "../Pages/StudentReg/index";
 
 export const multiStepContext = React.createContext();
 
-const StepContext = () => {
+const StepContext = ({ children }) => {
   const [courrentStep, setCourrentStep] = useState(1);
   const [userData, setUserData] = useState([]);
   const [finalData, setFinalData] = useState([]);
@@ -19,7 +19,7 @@ const StepContext = () => {
           setFinalData,
         }}
       >
-        <StudentReg />
+        {children}
       </multiStepContext.Provider>
     </div>
   );

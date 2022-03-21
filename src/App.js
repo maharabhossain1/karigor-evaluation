@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CommentApp />} />
-          {/* <Route path="/stepper" element={< />} /> */}
+          <Route path="stepper" element={<StudentReg />} />
         </Routes>
       </BrowserRouter>
     </>
