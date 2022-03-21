@@ -5,14 +5,14 @@ import CommentApp from "./Components/CommentApp/index";
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<CommentApp />} /> */}
-          {/* <Route path="stepper" element={<StudentReg />} /> */}
+          <Route path="/" element={<CommentApp />} />
+          {/* <Route path="/stepper" element={< />} /> */}
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
